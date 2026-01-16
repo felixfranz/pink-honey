@@ -80,112 +80,81 @@ jq2(function ($) {
   });
 
 
-
-  ////////////////////////////////////
-  // SETTING UP NAV FOR ACCESIBILITY
-  ////////////////////////////////////
-
-  // add aria-expanded to all submenues
-  var sub_menu = $(".sub-menu");
-  var toplevel_a = $(".menu>li>a");
-
-  sub_menu.attr("aria-expanded", "false");
-
-  // on focus on top-level a
-  toplevel_a.on("focus", function () {
-
-    // get sub-menu
-    var menu = $(this).closest(".menu-item").find(sub_menu);
-
-    // set state
-    var isOpen = false;
-
-    // reset all sub-menus
-    sub_menu.css("display", "none");
-    sub_menu.attr("aria-expanded", "false");
-    sub_menu.removeClass("open");
-    $("li").remove(".tab_nav_point");
-    
-    me = $(this);
-
-    // on keydown while still top-level
-    $(this).on("keydown", function (event) {
-     
-      var keycode = (event.keyCode ? event.keyCode : event.which);
-       
-      if (keycode == '13') {
-        event.preventDefault();
-        
-          if (isOpen) {
-            
-            menu.removeClass("open");
-            menu.css("display", "none");
-            menu.attr("aria-expanded", "false");
-            sub_menu.remove(".tab_nav_point");
-            sub_menu.removeClass("open");
-            isOpen = false;
-          } else {
-            $("li").remove(".tab_nav_point");
-            me.clone().prependTo(menu);
-            menu.find("> a").wrap('<li class="tab_nav_point"></li>');
-            menu.addClass("open");
-            menu.css("display", "block");
-            menu.attr("aria-expanded", "true");
-            isOpen = true;
-          }
-     
-      } // end keydown 13 // enter
-
-      if (keycode == '27') {
-        event.preventDefault();
-
-          menu.removeClass("open");
-          menu.css("display", "none");
-          menu.attr("aria-expanded", "false");
-          sub_menu.remove(".tab_nav_point");
-          sub_menu.removeClass("open");
-          isOpen = false;
-
-      } // end keydown 13 // enter
-
-    }); // keydown event
-
-  }); // end focus
-
-
-  // on focus on sub-level a // to close the sub menu
-  $(".sub-menu li a").on("focus", function () {
-
-    // get sub-menu
-    var menu = $(this).closest(sub_menu);
-    var parent_item = $(this).closest(".menu-item-has-children").find(">a");
-  
-    // on keydown while still sub-level
-    $(this).on("keydown", function (event) {
-     
-    var keycode = (event.keyCode ? event.keyCode : event.which);
-
-    if (keycode == '27') {
-     
-        console.log("down");
-        event.preventDefault();
-
-          menu.removeClass("open");
-          menu.css("display", "none");
-          menu.attr("aria-expanded", "false");
-          sub_menu.remove(".tab_nav_point");
-          sub_menu.removeClass("open");
-          isOpen = false;
-        parent_item.focus();
-      } // end keydown 27 // escape
-
-    }); // keydown event
-
-  }); // end focus
-
-  ////////////////////////////////////
-  // END ACCESIBILITY
-  ////////////////////////////////////
-
-
 }); 
+
+const svg_top = document.getElementById("svg-top");
+const form = document.getElementById("form");
+
+// SVG coordinate space
+const WIDTH = 1000;
+const HEIGHT = 800;
+
+// limits for moving point 1
+const MIN_X_1 = 100;
+const MAX_X_1 = 900;
+const MIN_Y_1 = 20;
+const MAX_Y_1 = 250;
+
+// current + target positions
+let current_1 = { x: 700, y: 100 };
+let target_1 = { x: 700, y: 100 };
+
+// easing factor (lower = smoother)
+const EASE_1 = 0.003;
+const EASE_2 = 0.01;
+
+// limits for moving point 2
+const MIN_X_2 = 50;
+const MAX_X_2 = 950;
+const MIN_Y_2 = 100;
+const MAX_Y_2 = 750;
+
+// current + target positions
+let current_2 = { x: 900, y: 700 };
+let target_2 = { x: 900, y: 700 };
+
+// easing factor (lower = smoother)
+
+
+function handlePointer(clientX, clientY) {
+  const rect = svg_top.getBoundingClientRect();
+
+  const x = ((clientX - rect.left) / rect.width) * WIDTH;
+  const y = ((clientY - rect.top) / rect.height) * HEIGHT;
+
+  // clamp target 1
+  target_1.x = Math.max(MIN_X_1, Math.min(MAX_X_1, x));
+  target_1.y = Math.max(MIN_Y_1, Math.min(MAX_Y_1, y));
+
+  // clamp target 2
+  target_2.x = Math.max(MIN_X_2, Math.min(MAX_X_2, x));
+  target_2.y = Math.max(MIN_Y_2, Math.min(MAX_Y_2, y));
+}
+
+svg_top.addEventListener("mousemove", (e) => {
+  handlePointer(e.clientX, e.clientY);
+});
+
+svg_top.addEventListener("pointermove", (e) => {
+  // Only react to direct interaction
+  if (e.pointerType === "mouse" || e.pointerType === "touch") {
+    handlePointer(e.clientX, e.clientY);
+  }
+});
+
+function animate() {
+  // lerp toward target
+  current_1.x += (target_1.x - current_1.x) * EASE_1;
+  current_1.y += (target_1.y - current_1.y) * EASE_1;
+
+  current_2.x += (target_2.x - current_2.x) * EASE_2;
+  current_2.y += (target_2.y - current_2.y) * EASE_2;
+
+  form.setAttribute(
+    "points",
+    `0,0 ${current_1.x},${current_1.y} ${WIDTH},0 ${current_2.x},${current_2.y} 0,800`
+  );
+  requestAnimationFrame(animate);
+}
+
+animate();

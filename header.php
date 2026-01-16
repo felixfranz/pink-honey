@@ -22,38 +22,16 @@
 
 <body <?php body_class(); ?>>
 <?php wp_body_open(); ?>
-<a class="skip-to-content-link" href="#main" id="primary">
-  Skip to content
-</a>
+
+
+<div class="background">
+	<svg id="svg-top" viewBox="0 0 1000 800" preserveAspectRatio="none">
+  <!-- anchored top left + top right -->
+  <polygon id="form" points="0,0 800,50 1000,0 900,700 0,800" />
+</svg>
+</div>
 
 
 <div class="page wrap">
 
-	<header class="header page__header">
-		<div class="logo header__logo">
-			<?php
-			
-			if ( is_front_page() && is_home() ) :
-				?>
-				<h1 class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
-				<?php
-			else :
-				?>
-				<p class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></p>
-				<?php
-			endif; ?>
-		</div><!-- .site-branding -->
 
-		<nav class="main-navigation header__main-navigation">
-			<?php
-			wp_nav_menu(
-				array(
-					'theme_location' => 'menu-1',
-					'menu_class'           => 'menu main-navigation__menu',
-					'container'            => 'div',
-					'container_class'      => 'main-navigatinon__container',
-				)
-			);
-			?>
-		</nav><!-- .main-navigation -->
-	</header><!-- .header -->

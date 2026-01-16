@@ -15,43 +15,49 @@
 get_header();
 ?>
 
+    <div class="date-location">
+      <div class="date-time">7 February 2026, 17h</div>
+      <div class="location"><p class="vert-counterclock">here</p> <div><a href="#">Westand</a> <br>Westbahnhof 13<br>Braunschweig</div></div>
+    </div>
+
 	<main id="main" class="site-main page__site-main">
 
 		<?php
 		while ( have_posts() ) :
+		
 			the_post();
 
-			?>
+		?>
 			
-			
-    <div class="date-location">
-      7 February 2026 · 17 h<br>
-      Westand · Westbahnhof 13 · Braunschweig
-    </div>
-
  <header>
-    <h1>
-      PINK HONEY FESTIVAL
-    </h1>
-  </header>
+	<p>presented by HBK Braunschweig</p>
+   <div class="logo-image"></div>
+</header>
 
   <section class="lineup">
 
-     <span class="vert-counterclock">outside of contest</span>
-    <ul class="headliner">
+   <div class="headliner">
+    <span class="vert-counterclock">outside of contest</span>
+    <ul>
       <li>Tintin Patrone</li>
-      <li>Die Apotheke</li>
+      <li>Haiyti</li>
     </ul>
+	</div>
 
     <div class="contest">
-		 <span class="vert-counterclock"></span>
-      <p>Bezugsgruppe: Rainer Rauch</p>
-      <p>Die!Landschaft ·</p> <p>plowjobs are realjobs </p><p> FFUERZANGE</p>
-      <p><strong>Moderation:</strong> Miguel Alias Name</p>
+		 <span class="vert-counterclock">the 4 contest bands</span>
+		 <ul>
+			<li>Bezugsgruppe: Rainer Rauch</li>
+			<li>Die!Landschaft</li>
+			<li>blowjobs are realjobs </li>
+			<li>FEUERZANGE</li>
+		 </ul>
     </div>
-	  <div class="moderation">
+	
+	<div class="moderation">
       <span class="vert-counterclock">Moderation</span><p> Miguel Alias Name</p>
     </div>
+
   </section>
 
   <div class="free-entry">
@@ -60,10 +66,10 @@ get_header();
 
   <section class="awards">
     <p>including the annual</p>
-    <h2>EMAA AWARDS</h2>
+    <h2>»EMAA AWARDS«</h2>
 
-    <!-- Replace with your real logo -->
-    <img src="layout-website.png" alt="EMAA Awards Logo Placeholder">
+   
+    <img src="<?php echo get_template_directory_uri(); ?>/library/images/EMAAAlogoGOLD.png" alt="EMAA Awards Logo">
 
     <p><strong>Vote soon!</strong></p>
   </section>

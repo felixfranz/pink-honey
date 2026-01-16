@@ -11,10 +11,20 @@
 
 ?>
 
-	<footer class="site-footer page__site-footer">
 
-	</footer><!-- #colophon -->
 </div><!-- #page -->
+	<footer class="site-footer page__site-footer">
+		
+			
+			<a href="#" class="flex-start">Imprint & Contact</a>
+			
+			<div>
+				<img src="<?php echo get_template_directory_uri(); ?>/library/images/hbk-logo_pfade.png" alt="HBK Logo">
+			<img src="<?php echo get_template_directory_uri(); ?>/library/images/RZ_VWS_Zukunft-Niedersachsen_Logo_Schwarz_RGB.png" alt="HBK Logo">
+		
+			
+		</div>
+	</footer><!-- #colophon -->
 
 <!-- NAV TOGGLE AND PAGE OVERLAY TO AVOID SCREENREADERS ON TOP -->
 <a class="nav-toggle" href="#"> 

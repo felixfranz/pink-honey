@@ -19,6 +19,8 @@
 }
 
 .nav-toggle {
+	
+
 	position: fixed;
 	width: 144px;
 	height: 81px;
@@ -31,7 +33,9 @@
 	top: 0;
 	right: 0;
 	transition: all 0.5s var(--ease);
-	transform: translateX(100%)
+	transform: translateX(100%);
+
+	display: none;
 }
 
 .body__scrolled,
