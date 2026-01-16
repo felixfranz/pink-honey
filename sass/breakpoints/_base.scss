@@ -78,6 +78,7 @@ LAYOUT & GRID STYLES
 
 .background{
     position: fixed;
+   // display: none;
     width: 100%;
     height: 100vh;
     z-index: 0;
@@ -108,9 +109,10 @@ body {
 }
 
 header {
+
     pointer-events: none;
     position: relative;
-    width: 60vw;
+    width: 90vw;
     margin: 0 auto;
     aspect-ratio: 970 / 580;
     max-width: 800px;
@@ -123,42 +125,37 @@ header {
     height: 100%;
     width: 100%;
     background: url(../images/PHF-LOGO.png) center 0 / contain no-repeat;
-    transform: translateX(30px);
 }
 
 
 .date-location {
-    position: fixed;
-    left: 1rem;
-    top: 0;
-    transform-origin: bottom left;
-    transform: rotate(90deg) translateX(-50px);
-
+width: 100vw;
+background: var(--green);
+transform: translateX(-6vw);
+display: flex;
+padding: 20px 5% 10px;
+justify-content: space-between;
+align-items: center;
+border-bottom: 1px solid var(--pink);
     .date-time{
     //transform: rotate(90deg) translateY(250%);
     transform-origin: center top;
-    font-size: 60px;
+    font-size: 20px;
     float: left;
+    font-family: var(--font-bold);
     }
     .location{
         float: left;
         position: relative;
+        margin-left: 20px;
         a{
             pointer-events: initial;
         }
         p{
-            position: absolute;
-            left: 25px;
-            bottom: -10px;
-            transform-origin: center center;
-            transform: rotate(180deg);
             font-weight: 600;
+            display: none;
         }
-        div{
-            transform-origin: center center;
-            transform: rotate(-90deg) translateX(50px);
 
-        }
     }
    
 }   
@@ -181,18 +178,19 @@ section {
     }
 
     .headliner ul{
-        font-size: 60px;
+        font-size: 40px;
         font-weight: 600;
     }
 
     .contest{
         ul{
-            font-size: 40px;
+            font-size: 20px;
             font-weight: 600;
         }
     }
     .moderation{
         p{
+            margin-top: 0;
             font-size: 20px;
             font-weight: 600;
         }
@@ -226,8 +224,8 @@ section {
 
 .free-entry {
     text-align: center;
-    font-size: 4rem;
-    margin: 4rem 0;
+    font-size: 3rem;
+    margin: 2rem 0;
     font-family: var(--moxa);
 }
 
@@ -236,7 +234,7 @@ section {
  
     h2{
         font-family: var(--moxa);
-        font-size: 3rem;
+        font-size: 2rem;
     }
 }
 
@@ -250,18 +248,29 @@ footer {
     //background: var(--green);
     padding: 1.5rem 2rem;
     display: flex;
-    justify-content: space-between;
+    flex-wrap: wrap;
     align-items: center;
+    justify-content: center;
     font-size: 0.75rem; 
     z-index: 3;
     position: relative;
     gap: 1rem;
 
+    .imprint-link{
+        order: 2;
+        color: black;
+    }
 
+div{
+    order: 1;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
 
     img{
-        margin-top: -10px;
-        width: 200px;
-        max-width: 50%;
+        margin-top: 10px;
+        width: 100%;
+
     }
 }

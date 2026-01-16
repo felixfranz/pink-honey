@@ -17,6 +17,8 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="profile" href="https://gmpg.org/xfn/11">
 
+	<meta name="theme-color" content="#a7c81f">
+
 	<?php wp_head(); ?>
 </head>
 
@@ -26,7 +28,7 @@
 
 <div class="background">
 	<svg id="svg-top" viewBox="0 0 1000 800" preserveAspectRatio="none">
-  <!-- anchored top left + top right -->
+
   <polygon id="form" points="0,0 800,50 1000,0 900,700 0,800" />
 </svg>
 </div>

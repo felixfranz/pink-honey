@@ -1,4 +1,134 @@
 @media only screen and (min-width: 768px) {
 
-    
+
+    .date-location {
+    position: fixed;
+    width: auto;
+    left: 1rem;
+    top: 0;
+    padding: 0;
+    transform-origin: bottom left;
+    transform: rotate(90deg) translateX(-50px);
+    display: block;
+    border: none;
+    background: transparent;
+
+    .date-time{
+    //transform: rotate(90deg) translateY(250%);
+    transform-origin: center top;
+    font-size: 60px;
+    float: left;
+    }
+    .location{
+        float: left;
+        position: relative;
+        margin: 0;
+        a{
+            pointer-events: initial;
+        }
+        p{
+            position: absolute;
+            left: 25px;
+            bottom: -10px;
+            transform-origin: center center;
+            transform: rotate(180deg);
+            font-weight: 600;
+            display: inline;
+        }
+        div{
+            transform-origin: center center;
+            transform: rotate(-90deg) translateX(50px);
+
+        }
+    }
+   
+} 
+
+
+header {
+
+    pointer-events: none;
+    position: relative;
+    width: 60vw;
+    margin: 0 auto;
+    aspect-ratio: 970 / 580;
+    max-width: 800px;
+
+    p {
+        padding-top: 10px;
+        text-align: center;
+    }
+}
+
+.logo-image {
+    transform: translateX(30px);
+}
+
+
+.lineup {
+    &>div {
+        //background: red;
+        margin-top: 40px;
+        text-align: center;
+    }
+
+    .headliner ul {
+        font-size: 60px;
+        font-weight: 600;
+    }
+
+        .contest {
+            ul {
+                font-size: 40px;
+                font-weight: 600;
+            }
+        }
+
+}
+
+.free-entry {
+    text-align: center;
+    font-size: 4rem;
+    margin: 4rem 0;
+    font-family: var(--moxa);
+}
+
+.awards {
+    text-align: center;
+
+    h2 {
+        font-family: var(--moxa);
+        font-size: 3rem;
+    }
+}
+
+footer {
+    //background: var(--green);
+    padding: 1.5rem 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 0.75rem;
+    z-index: 3;
+    position: relative;
+    gap: 1rem;
+
+    .imprint-link {
+            order: 1;
+        }
+
+                div {
+          
+                    display: block;
+
+                }
+
+
+    img {
+        margin-top: -10px;
+        width: 200px;
+        max-width: 50%;
+    }
+}
+
 }

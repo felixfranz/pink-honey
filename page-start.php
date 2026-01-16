@@ -16,8 +16,8 @@ get_header();
 ?>
 
     <div class="date-location">
-      <div class="date-time">7 February 2026, 17h</div>
-      <div class="location"><p class="vert-counterclock">here</p> <div><a href="#">Westand</a> <br>Westbahnhof 13<br>Braunschweig</div></div>
+      <div class="date-time">7 February 2026, 17 Uhr</div>
+      <div class="location"><p class="vert-counterclock">here</p> <div><a href="https://westand.net/" target="_blank">Westand</a> <br>Westbahnhof 13<br>Braunschweig</div></div>
     </div>
 
 	<main id="main" class="site-main page__site-main">
@@ -37,10 +37,11 @@ get_header();
   <section class="lineup">
 
    <div class="headliner">
-    <span class="vert-counterclock">outside of contest</span>
+    <span class="vert-counterclock">non contest</span>
     <ul>
-      <li>Tintin Patrone</li>
       <li>Haiyti</li>
+      <li>Tintin Patrone</li>
+      
     </ul>
 	</div>
 
@@ -49,13 +50,13 @@ get_header();
 		 <ul>
 			<li>Bezugsgruppe: Rainer Rauch</li>
 			<li>Die!Landschaft</li>
-			<li>blowjobs are realjobs </li>
+			<li>Blowjobs are reAl JoBS </li>
 			<li>FEUERZANGE</li>
 		 </ul>
     </div>
 	
 	<div class="moderation">
-      <span class="vert-counterclock">Moderation</span><p> Miguel Alias Name</p>
+      <span class="vert-counterclock">Moderation</span><p>Don Pedro der Ringsprecher</p>
     </div>
 
   </section>
