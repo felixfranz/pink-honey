@@ -17,7 +17,7 @@ get_header();
 
     <div class="date-location">
       <div class="date-time">7 February 2026, 17 Uhr</div>
-      <div class="location"><p class="vert-counterclock">here</p> <div><a href="https://westand.net/" target="_blank">Westand</a> <br>Westbahnhof 13<br>Braunschweig</div></div>
+      <div class="location"><p class="vert-counterclock">here</p> <div><a href="https://westand.net/" target="_blank">westand</a> <br>Westbahnhof 13<br>Braunschweig</div></div>
     </div>
 
 	<main id="main" class="site-main page__site-main">
@@ -30,7 +30,7 @@ get_header();
 		?>
 			
  <header>
-	<p>presented by HBK Braunschweig</p>
+	<p>HBK Braunschweig presents</p>
    <div class="logo-image"></div>
 </header>
 
@@ -62,7 +62,7 @@ get_header();
   </section>
 
   <div class="free-entry">
-    Eintritt Frei
+   <div>Eintritt Frei</div> 
   </div>
 
   <section class="awards">
@@ -72,7 +72,7 @@ get_header();
    
     <img src="<?php echo get_template_directory_uri(); ?>/library/images/EMAAAlogoGOLD.png" alt="EMAA Awards Logo">
 
-    <p><strong>Vote soon!</strong></p>
+    <p><strong>voting enabled soon!</strong></p>
   </section>
 
 			

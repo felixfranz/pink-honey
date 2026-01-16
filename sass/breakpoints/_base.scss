@@ -10,6 +10,7 @@ html {
     --flow-medium: 20px;
     --flow-big: 30px;
     --bottom-row-height: 70px;
+   
 }
 
 body {
@@ -74,6 +75,7 @@ LAYOUT & GRID STYLES
     --pink: #f4b3c2;
     --green: #a7c81f;
     --black: #111;
+     --shadow-color: var(--black);
 }
 
 .background{
@@ -129,25 +131,33 @@ header {
 
 
 .date-location {
-width: 100vw;
+width: 92vw;
 background: var(--green);
-transform: translateX(-6vw);
+transform: translateX(-3vw);
 display: flex;
+margin-top: 10px;
 padding: 20px 5% 10px;
 justify-content: space-between;
 align-items: center;
 border-bottom: 1px solid var(--pink);
+    border: 2px solid black;
+    box-shadow:
+        1px 1px var(--shadow-color), 
+        2px 2px var(--shadow-color), 
+        3px 3px var(--shadow-color), 
+        4px 4px var(--shadow-color), 
+        5px 5px 0px 0px var(--shadow-color),;
     .date-time{
     //transform: rotate(90deg) translateY(250%);
     transform-origin: center top;
-    font-size: 20px;
+    font-size: 18px;
     float: left;
     font-family: var(--font-bold);
     }
     .location{
         float: left;
         position: relative;
-        margin-left: 20px;
+        margin-left: 10px;
         a{
             pointer-events: initial;
         }
@@ -175,6 +185,23 @@ section {
     .vert-counterclock{
         display: inline-block;
         transform: rotate(180deg);
+        transition: all 0.2s var(--ease);
+        pointer-events: initial;
+        border: 01px solid black;
+        padding: 4px 6px 2px;
+        margin: 0 0 10px;
+            background-color: var(--pink);
+            box-shadow:
+                -1px -1px var(--shadow-color),
+                -2px -2px var(--shadow-color),
+                -3px -3px 0px 0px var(--shadow-color);
+        &:hover{
+            transform: rotate(0deg);
+            box-shadow:
+                    1px 1px var(--shadow-color),
+                    2px 2px var(--shadow-color),
+                    3px 3px 0px 0px var(--shadow-color);
+        }
     }
 
     .headliner ul{
@@ -224,9 +251,24 @@ section {
 
 .free-entry {
     text-align: center;
-    font-size: 3rem;
-    margin: 2rem 0;
+    display: flex;
+    justify-content: center;
+    font-size: 2.5rem;
+    margin: 2rem auto;
     font-family: var(--moxa);
+   
+    div{
+        padding: 10px 40px 0;
+        border: 2px solid black;
+        background-color: var(--pink);
+        box-shadow:
+            1px 1px var(--shadow-color),
+            2px 2px var(--shadow-color),
+            3px 3px var(--shadow-color),
+            4px 4px var(--shadow-color),
+            5px 5px 0px 0px var(--shadow-color), ;
+    }
+
 }
 
 .awards {
@@ -242,11 +284,18 @@ section {
     width: 250px;
     max-width: 60%;
     margin: 1.5rem 0;
+    pointer-events: initial;
+    transform: rotate(0deg);
+    transition: all 2s ease-in-out;
+
+    &:hover{
+    transform: rotate(360deg);
+    }
 }
 
 footer {
     //background: var(--green);
-    padding: 1.5rem 2rem;
+    padding: 1.5rem 2rem 0.5rem;
     display: flex;
     flex-wrap: wrap;
     align-items: center;
@@ -259,6 +308,8 @@ footer {
     .imprint-link{
         order: 2;
         color: black;
+        background: var(--green);
+        padding: 3px;
     }
 
 div{
@@ -273,4 +324,37 @@ div{
         width: 100%;
 
     }
+}
+
+#imprint-box{
+    width: 100%;
+        order: 2;
+        max-height: 0;
+        background-color: var(--pink);
+        color: #fff;
+        /* hidden by default */
+        padding: 0;
+        margin-top: 0;
+        margin-bottom: 0;
+        color: black;
+        border: 2px solid black;
+        background-color: var(--pink);
+        box-shadow:
+            1px 1px var(--shadow-color),
+            2px 2px var(--shadow-color),
+            3px 3px var(--shadow-color),
+            4px 4px var(--shadow-color),
+            5px 5px 0px 0px var(--shadow-color), ;
+        opacity: 0;
+ 
+            overflow: hidden;
+            transition: all 0.3s ease;
+}
+
+#imprint-box.show {
+    opacity: 1;
+    max-height: 500px;
+    padding: 20px;
+    margin-top: 10px;
+    margin-bottom: 10px;
 }

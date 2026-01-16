@@ -158,3 +158,18 @@ function animate() {
 }
 
 animate();
+
+
+// IMPRINT
+
+const toggleBtn = document.getElementById("toggleBtn");
+const box = document.getElementById("imprint-box");
+
+toggleBtn.addEventListener("click", (e) => {
+  e.preventDefault();
+  box.classList.toggle("show");
+
+  if (box.classList.contains("show")) {
+    box.scrollIntoView({ behavior: "smooth", block: "start" });
+  }
+});
